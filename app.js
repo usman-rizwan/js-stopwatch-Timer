@@ -88,6 +88,7 @@ var beep = document.getElementById("beep");
 var totalMins = 5;
 var time = totalMins * 60;
 var timerStatus = false;
+
 function timer() {
   var timerMinutes = Math.floor(time / 60);
   var timerSeconds = time % 60;
@@ -97,26 +98,27 @@ function timer() {
       tSpan.innerHTML = `0${timerMinutes}<small>m</small>: 0${timerSeconds}<small>s</small>`;
     }
   } else {
+    time = 0;
     resetTimer();
     tStart.disabled = false;
     tEnd.disabled = true;
     beep.play();
   }
+  // console.log(time);
   time--;
 }
 function startTimer() {
   tEnd.disabled = false;
   if (!timerStatus) {
-    tStart.innerText = "Pause";
-    time = totalMins * 60;
+    tStart.innerHTML = "Pause";
     timerStatus = true;
     interval = setInterval(timer, 1000);
     beep.pause();
   } else {
-    tStart.innerText = "Start";
+    console.log("I am  time ELse"+ time);
+    tStart.innerHTML = "Start";
     timerStatus = false;
     pause();
-    beep.pause();
   }
 }
 function resetTimer() {
@@ -126,6 +128,7 @@ function resetTimer() {
   tEnd.disabled = true;
   tStart.innerText = "Start";
   timerStatus = false;
+  time = totalMins * 60;
 }
 
 function pause() {
