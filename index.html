@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js StopWatch And Timer</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header class="mb-10">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand mt-2 mt-lg-0">
+                        <i class="fa-solid fa-stopwatch-20 "></i>
+                    </a>
+
+                </div>
+
+
+            </div>
+
+            </div>
+
+        </nav>
+        <!-- Navbar -->
+
+
+        <!-- Tabs navs -->
+        <div class="accordion container mt-4">
+            <div class="accordion-item">
+                <h2 class="accordion-header container">
+                    <div class="container mt-2 mb-3 text-center justify-content-center">
+                        <ul class="nav nav-tabs mb-3 d-flex justify-content-center" id="ex-with-icons" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="ex-with-icons-tab-1" data-mdb-toggle="tab"
+                                    href="#ex-with-icons-tabs-1" role="tab" aria-controls="ex-with-icons-tabs-1"
+                                    aria-selected="true">
+                                    <i class="fa-regular fa-hourglass"></i> Timer
+                                </a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="ex-with-icons-tab-2" data-mdb-toggle="tab"
+                                    href="#ex-with-icons-tabs-2" role="tab" aria-controls="ex-with-icons-tabs-2"
+                                    aria-selected="false">
+                                    <i class="fa-solid fa-stopwatch"></i> Stop Watch
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Tabs navs -->
+                        <!-- Tabs content -->
+                        <div class="tab-content" id="ex-with-icons-content">
+                            <div class="tab-pane fade show active" id="ex-with-icons-tabs-1" role="tabpanel"
+                                aria-labelledby="ex-with-icons-tab-1">
+                                <span id="tspan">05:00</span>
+                                <br>
+                                <div class="nav nav-tabs mb-3 d-flex justify-content-center mt-4" id="ex-with-icons"
+                                    role="tablist">
+                                    <button class="btn btn-primary me-2 mt-2" id="tstart" onclick="startTimer()">Start</button>
+                                    <button class="btn btn-danger  me-2 mt-2" id="tend" disabled onclick="resetTimer()">Reset</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="ex-with-icons-tabs-2" role="tabpanel"
+                                aria-labelledby="ex-with-icons-tab-2">
+                                <!-- Stopwatch slider content here -->
+                                <span id="min">00:</span>
+                                <span id="sec">00:</span>
+                                <span id="msec">00</span>
+                                <br>
+
+
+                                <div class="nav nav-tabs mb-3 d-flex justify-content-center mt-4" id="ex-with-icons"
+                                    role="tablist">
+                                    <button class="btn btn-primary me-2 mt-2" onclick="startStopWatch() "
+                                        id="stopBtn">Start</button>
+                                    <button class="btn btn-info me-2 mt-2" disabled onclick="pauseStopWatch() "
+                                        id="pauseBtn">Pause</button>
+                                    <button class="btn my-btn btn-success  me-2 mt-2" id="lapBtn" onclick="showLap()"
+                                        disabled>Lap <i class="fa-regular fa-flag "></i></button>
+
+                                    <br>
+                                    <button class="btn btn-danger me-2 mt-2" disabled onclick="reset()"
+                                        id="stopReset">Reset</button>
+                                    <table class="table container" id="my-table">
+                                        <thead id="tHead">
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Minutes</th>
+                                                <th scope="col">Seconds</th>
+                                                <th scope="col">MilliSeconds</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <audio id="beep" preload="auto">
+                                <source src="audio/beep.mp3" type="audio/mpeg">
+                              
+                            </audio>
+
+                        </div>
+
+
+                        <!-- <button class="btn btn-primary me-2">Start</button>
+
+
+                            <button class="btn btn-black">Reset</button> -->
+                    </div>
+                </h2>
+            </div>
+        </div>
+
+
+        <!-- Tabs content -->
+        <!-- MDB -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+        <script src="app.js"></script>
+</body>
+
+</html>
