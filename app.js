@@ -110,7 +110,7 @@ function startTimer() {
     tStart.innerText = "Pause";
     time = totalMins * 60;
     timerStatus = true;
-    interval = setInterval(timer, 10);
+    interval = setInterval(timer, 1000);
     beep.pause();
   } else {
     tStart.innerText = "Start";
