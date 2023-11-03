@@ -85,7 +85,7 @@ var tSpan = document.getElementById("tspan");
 var tStart = document.getElementById("tstart");
 var tEnd = document.getElementById("tend");
 var beep = document.getElementById("beep");
-var totalMins = 5;
+var totalMins = Math.ceil(Math.random()*5);
 var time = totalMins * 60;
 var timerStatus = false;
 
