@@ -85,9 +85,11 @@ var tSpan = document.getElementById("tspan");
 var tStart = document.getElementById("tstart");
 var tEnd = document.getElementById("tend");
 var beep = document.getElementById("beep");
-var totalMins = 5;
+var totalMins = Math.ceil(Math.random()*6);
+tSpan.innerHTML = `0${totalMins}<small>m</small> : 00<small>s</small>`;
 var time = totalMins * 60;
 var timerStatus = false;
+var timeInterval  ;
 
 function timer() {
   var timerMinutes = Math.floor(time / 60);
@@ -112,18 +114,18 @@ function startTimer() {
   if (!timerStatus) {
     tStart.innerHTML = "Pause";
     timerStatus = true;
-    interval = setInterval(timer, 1000);
+    timeInterval = setInterval(timer, 1000);
     beep.pause();
   } else {
     console.log("I am  time ELse"+ time);
     tStart.innerHTML = "Start";
     timerStatus = false;
-    pause();
+    pauseTimer();
   }
 }
 function resetTimer() {
   tSpan.innerHTML = `00 : 00`;
-  clearInterval(interval);
+  clearInterval(timeInterval);
   tStart.disabled = false;
   tEnd.disabled = true;
   tStart.innerText = "Start";
@@ -131,6 +133,6 @@ function resetTimer() {
   time = totalMins * 60;
 }
 
-function pause() {
-  clearInterval(interval);
+function pauseTimer() {
+  clearInterval(timeInterval);
 }
